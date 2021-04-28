@@ -10,6 +10,7 @@ export const login = (body, history, setLoading) => {
     .then((response) => {
       setLoading(false);
       localStorage.setItem("token", response.data.token);
+      localStorage.setItem("nickname", response.data.user.nickname);
       goToMusics(history);
     })
     .catch((error) => {
@@ -29,6 +30,7 @@ export const signUp = (body, history, setLoading) => {
     .then((response) => {
       setLoading(false);
       localStorage.setItem("token", response.data.token);
+      localStorage.setItem("nickname", response.data.user.nickname);
       goToMusics(history);
     })
     .catch((error) => {
