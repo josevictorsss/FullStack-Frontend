@@ -1,7 +1,7 @@
 import React from "react";
 import { HeaderContainer } from "./styled";
 import { NavBar, Button, ToolConfigBar, UserOptions } from "./styled";
-import { goToLogin } from "../../routes/Coordinator";
+import { goToLogin, goToSignup } from "../../routes/Coordinator";
 import { useHistory } from "react-router";
 
 const Header = () => {
@@ -15,7 +15,7 @@ const Header = () => {
             <h1>Labefy</h1>
             <UserOptions>
               <Button onClick={() => goToLogin(history)}>Login</Button>|
-              <Button>Signup</Button>
+              <Button onClick={() => goToSignup(history)}>Signup</Button>
             </UserOptions>
           </ToolConfigBar>
         </NavBar>
