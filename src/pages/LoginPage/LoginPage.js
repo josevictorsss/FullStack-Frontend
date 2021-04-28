@@ -9,7 +9,7 @@ import Header from "../../components/Header/Header";
 import LoginForm from "../../components/LoginForm/LoginForm";
 
 const LoginPage = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
 
   return (
     <div>

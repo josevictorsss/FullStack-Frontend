@@ -20,7 +20,7 @@ const LoginForm = () => {
     email: "",
     password: "",
   });
-  const [loading, setLoading] = useState(false);
+  const [setLoading] = useState(false);
   const classes = useStyles();
 
   const handleLogin = (event) => {
