@@ -1,1 +1,1 @@
-export const baseUrl = " https://backend-fullstack-labenu.herokuapp.com";
+export const baseUrl = "https://labefy.herokuapp.com";
