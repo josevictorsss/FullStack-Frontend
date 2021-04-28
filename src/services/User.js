@@ -1,8 +1,9 @@
 import axios from "axios";
 import { baseUrl } from "../constants/Urls";
-import swal from "sweetalert2";
+import { goToMusics } from "../routes/Coordinator";
+import Swal from "sweetalert2";
 
-export const login = (body, setLoading) => {
+export const login = (body, history, setLoading) => {
   setLoading(true);
   axios
     .post(`${baseUrl}/user/login`, body)
@@ -10,14 +11,14 @@ export const login = (body, setLoading) => {
       setLoading(false);
       localStorage.setItem("token", response.data.token);
       localStorage.setItem("username", response.data.user.username);
+      goToMusics(history);
     })
     .catch((error) => {
       setLoading(false);
-      swal({
+      Swal.fire({
         title: "Os dados estão errados!",
         text: "Tente novamente.",
         icon: "error",
-        dangerMode: true,
       });
     });
 };
