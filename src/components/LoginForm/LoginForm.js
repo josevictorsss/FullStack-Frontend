@@ -48,6 +48,7 @@ const LoginForm = () => {
           name="email"
           autoComplete="email"
           autoFocus
+          color="white"
           value={form.email}
           onChange={changeState}
         />
