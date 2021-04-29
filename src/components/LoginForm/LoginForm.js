@@ -20,7 +20,7 @@ const LoginForm = () => {
     email: "",
     password: "",
   });
-  const [setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const classes = useStyles();
 
   const handleLogin = (event) => {
@@ -48,7 +48,6 @@ const LoginForm = () => {
           name="email"
           autoComplete="email"
           autoFocus
-          color="white"
           value={form.email}
           onChange={changeState}
         />

@@ -1,5 +1,5 @@
 export const goToMusics = (history) => {
-  history.push("/musics");
+  history.push("/feed");
 };
 
 export const goToLogin = (history) => {
