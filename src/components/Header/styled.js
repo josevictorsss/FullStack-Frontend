@@ -99,3 +99,7 @@ export const Nickname = styled.div`
     padding-right: 0;
   }
 `;
+
+export const Title = styled.h1`
+  cursor: pointer;
+`;

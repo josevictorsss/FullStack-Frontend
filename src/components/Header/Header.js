@@ -1,5 +1,5 @@
 import React from "react";
-import { HeaderContainer } from "./styled";
+import { HeaderContainer, Title } from "./styled";
 import { NavBar, Button, ToolConfigBar, UserOptions, Nickname } from "./styled";
 import { goToLogin, goToMusics, goToSignup } from "../../routes/Coordinator";
 import { useHistory } from "react-router";
@@ -37,7 +37,7 @@ const Header = () => {
         {token && (
           <NavBar position="static">
             <ToolConfigBar>
-              <h1 onClick={() => goToMusics(history)}>Labefy</h1>
+              <Title onClick={() => goToMusics(history)}>Labefy</Title>
               <UserOptions>
                 <Nickname>u/{nickname}</Nickname>
                 <Button onClick={logout}>Logout</Button>
