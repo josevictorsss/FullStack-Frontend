@@ -90,6 +90,8 @@ export const UserOptions = styled.div`
 
 export const Nickname = styled.div`
   padding-right: 50px;
+  color: white;
+  font-size: 16px;
   @media screen and (min-device-width: 320px) and (max-device-width: 420px) {
     padding-right: 0;
   }
