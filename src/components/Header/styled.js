@@ -87,3 +87,13 @@ export const UserOptions = styled.div`
     flex-direction: column;
   }
 `;
+
+export const Nickname = styled.div`
+  padding-right: 50px;
+  @media screen and (min-device-width: 320px) and (max-device-width: 420px) {
+    padding-right: 0;
+  }
+  @media screen and (min-device-width: 421px) and (max-device-width: 800px) {
+    padding-right: 0;
+  }
+`;
