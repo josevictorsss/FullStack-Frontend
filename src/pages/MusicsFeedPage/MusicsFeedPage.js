@@ -1,5 +1,5 @@
 import Header from "../../components/Header/Header";
-import OptionsMenu from "../../components/OptionsMenu.js/OptionsMenu";
+import OptionsMenu from "../../components/OptionsMenu/OptionsMenu";
 
 const MusicsFeedPage = () => {
   return (

@@ -1,6 +1,6 @@
 import { MainContainer, Options, OptionsContainer, Option } from "./styled";
 import { Home, PlaylistAdd, Queue, Storage } from "@material-ui/icons";
-import { goToMusics } from "../../routes/Coordinator";
+import { goToAddMusic, goToMusics } from "../../routes/Coordinator";
 import { useHistory } from "react-router";
 
 const OptionsMenu = () => {
@@ -21,7 +21,7 @@ const OptionsMenu = () => {
           <PlaylistAdd />
           <Option>Criar playlists</Option>
         </Options>
-        <Options>
+        <Options onClick={() => goToAddMusic(history)}>
           <Queue />
           <Option>Adicionar música</Option>
         </Options>
