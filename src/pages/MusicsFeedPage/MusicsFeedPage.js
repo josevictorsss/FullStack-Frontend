@@ -1,10 +1,11 @@
 import Header from "../../components/Header/Header";
+import OptionsMenu from "../../components/OptionsMenu.js/OptionsMenu";
 
 const MusicsFeedPage = () => {
   return (
     <div>
       <Header />
-      <h1>Labefy</h1>
+      <OptionsMenu />
     </div>
   );
 };
