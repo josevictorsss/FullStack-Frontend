@@ -9,7 +9,7 @@ export const login = (body, history, setLoading) => {
     .post(`${baseUrl}/user/login`, body)
     .then((response) => {
       setLoading(false);
-      localStorage.setItem("token", response.data.token);
+      localStorage.setItem("token", response.data.acessToken);
       localStorage.setItem("nickname", response.data.user.nickname);
       goToMusics(history);
     })
@@ -29,7 +29,7 @@ export const signUp = (body, history, setLoading) => {
     .post(`${baseUrl}/user/signup`, body)
     .then((response) => {
       setLoading(false);
-      localStorage.setItem("token", response.data.token);
+      localStorage.setItem("token", response.data.acessToken);
       localStorage.setItem("nickname", response.data.user.nickname);
       goToMusics(history);
     })

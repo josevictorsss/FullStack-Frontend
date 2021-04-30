@@ -8,16 +8,33 @@ import {
   StyledTextField,
   StyledButton,
 } from "./styled";
+import { baseUrl } from "../../constants/Urls";
+import GenreSelect from "../GenreSelect/GenreSelect";
+import useRequestData from "../../hooks/useRequestData";
 
 const AddMusicForm = () => {
   const history = useHistory();
+  const { data } = useRequestData(
+    `${baseUrl}/music/genres`,
+    undefined,
+    undefined
+  );
   const { form, changeState, clearInput } = useForm({
     title: "",
     author: "",
     file: "",
     album: "",
   });
+  const [genres, setGenres] = useState([]);
   const [selectedGenres, setSelectedGenres] = useState([]);
+
+  useEffect(() => {
+    setGenres(data);
+  }, [data]);
+
+  const handleSetGenres = (event, genres) => {
+    setSelectedGenres(genres);
+  };
 
   const handleMusicForm = (event) => {
     event.preventDefault();
@@ -47,7 +64,7 @@ const AddMusicForm = () => {
         />
         <StyledTextField
           required
-          label="Artista"
+          label="Autor"
           type="text"
           name="author"
           variant="filled"
@@ -74,6 +91,11 @@ const AddMusicForm = () => {
           value={form.album}
           onChange={changeState}
           fullWidth
+        />
+        <GenreSelect
+          genres={genres}
+          value={selectedGenres}
+          onChange={handleSetGenres}
         />
         <StyledButton variant="outlined" color="secondary" type="submit">
           Adicionar Música

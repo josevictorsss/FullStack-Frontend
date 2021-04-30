@@ -4,10 +4,12 @@ import { baseUrl } from "../constants/Urls";
 import { goToMusics } from "../routes/Coordinator";
 
 export const addMusic = (body, history) => {
+  const token = localStorage.getItem("token");
+
   axios
     .post(`${baseUrl}/music/add`, body, {
       headers: {
-        authorization: localStorage.getItem("token"),
+        authorization: token,
       },
     })
     .then((res) => {
@@ -19,6 +21,7 @@ export const addMusic = (body, history) => {
       goToMusics(history);
     })
     .catch((error) => {
+      console.log(error);
       Swal.fire({
         title: "Erro ao adicionar a música, tente novamente.",
         icon: "error",
