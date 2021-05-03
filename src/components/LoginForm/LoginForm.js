@@ -1,18 +1,18 @@
 import { useHistory } from "react-router";
+import { useState } from "react";
 import useForm from "../../hooks/useForm";
 import { goToSignup } from "../../routes/Coordinator";
 import { login } from "../../services/User";
-import {
-  Avatar,
-  Button,
-  Grid,
-  Link,
-  TextField,
-  Typography,
-} from "@material-ui/core";
+import { Avatar, Grid, Link } from "@material-ui/core";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-import { useStyles } from "./styled";
-import { useState } from "react";
+import {
+  useStyles,
+  Container,
+  FormContainer,
+  StyledTextField,
+  StyledButton,
+  TitleLogin,
+} from "./styled";
 
 const LoginForm = () => {
   const history = useHistory();
@@ -30,16 +30,16 @@ const LoginForm = () => {
   };
 
   return (
-    <div className={classes.paper}>
+    <Container>
       <Avatar className={classes.avatar}>
         <LockOutlinedIcon />
       </Avatar>
-      <Typography component="h1" variant="h5">
+      <TitleLogin component="h1" variant="h5">
         Entre com sua conta
-      </Typography>
-      <form className={classes.form} onSubmit={handleLogin} noValidate>
-        <TextField
-          variant="outlined"
+      </TitleLogin>
+      <FormContainer onSubmit={handleLogin} noValidate>
+        <StyledTextField
+          variant="filled"
           margin="normal"
           required
           fullWidth
@@ -51,8 +51,8 @@ const LoginForm = () => {
           value={form.email}
           onChange={changeState}
         />
-        <TextField
-          variant="outlined"
+        <StyledTextField
+          variant="filled"
           margin="normal"
           required
           fullWidth
@@ -64,7 +64,7 @@ const LoginForm = () => {
           value={form.password}
           onChange={changeState}
         />
-        <Button
+        <StyledButton
           type="submit"
           fullWidth
           variant="contained"
@@ -72,7 +72,7 @@ const LoginForm = () => {
           className={classes.submit}
         >
           <>ENTRAR</>
-        </Button>
+        </StyledButton>
         <Grid container>
           <Grid item>
             <Link href="#" variant="body2" onClick={() => goToSignup(history)}>
@@ -80,8 +80,8 @@ const LoginForm = () => {
             </Link>
           </Grid>
         </Grid>
-      </form>
-    </div>
+      </FormContainer>
+    </Container>
   );
 };
 
