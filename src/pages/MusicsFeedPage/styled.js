@@ -1,5 +1,5 @@
 import styled from "styled-components"
 
-export const AddMusicContainer = styled.div`
-  display: flex;
-`;
+export const FeedContainer = styled.div`
+    display:flex;
+`
