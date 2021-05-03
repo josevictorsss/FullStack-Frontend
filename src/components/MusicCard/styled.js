@@ -1,24 +1,33 @@
 import styled from "styled-components";
 
 export const CardContainer = styled.div`
-  display: grid;
-  height: 56px;
-  position: relative;
-  border: 1px solid white;
-  border-radius: 4px;
+  background-color: var(--black-50);
+  width: 100%;
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
 `;
 
-export const SubtitlesContainer = styled.div`
+export const MusicCardContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  height: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  height: 56px;
   width: 100%;
   margin-top: 3vh;
   grid-gap: 50px;
-  border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
   padding: 0px 16px;
 `;
 
 export const Subtitle = styled.p`
+  color: #b3b3b3;
+`;
+
+export const MusicTitle = styled.p`
+  color: var(--white);
+`;
+
+export const MusicPlaylist = styled.p`
+  color: #b3b3b3;
+`;
+
+export const CreatedAt = styled.p`
   color: #b3b3b3;
 `;

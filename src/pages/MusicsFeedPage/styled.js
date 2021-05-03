@@ -1,5 +1,10 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const FeedContainer = styled.div`
-    display:flex;
-`
+  display: flex;
+`;
+
+export const MusicsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
