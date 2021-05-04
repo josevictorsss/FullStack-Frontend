@@ -1,3 +1,5 @@
+import { useHistory } from "react-router";
+import { goToDetails } from "../../routes/Coordinator";
 import {
   CardContainer,
   CreatedAt,
@@ -7,10 +9,10 @@ import {
 } from "./styled";
 
 const MusicCard = (props) => {
-  console.log(props);
+  const history = useHistory();
   return (
     <CardContainer>
-      <MusicCardContainer>
+      <MusicCardContainer onClick={() => goToDetails(history, props.music.id)}>
         <MusicTitle>{props.music.title}</MusicTitle>
         <MusicPlaylist>{props.music.album}</MusicPlaylist>
         <CreatedAt>{props.music.createdAt}</CreatedAt>

@@ -24,4 +24,7 @@ export const Option = styled.span`
   margin-left: 5px;
   margin-bottom: 100px;
   cursor: pointer;
+  &:hover {
+    color: green;
+  }
 `;

@@ -2,7 +2,11 @@ import Header from "../../components/Header/Header";
 import MusicCard from "../../components/MusicCard/MusicCard";
 import OptionsMenu from "../../components/OptionsMenu/OptionsMenu";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
-import { ErrorMessage, FeedContainer, MusicsContainer } from "./styled";
+import {
+  ErrorMessage,
+  FeedContainer,
+  MusicsContainer,
+} from "./styled";
 import useRequestData from "../../hooks/useRequestData";
 import { baseUrl } from "../../constants/Urls";
 import Subtitles from "../../components/Subtitles/Subtitles";

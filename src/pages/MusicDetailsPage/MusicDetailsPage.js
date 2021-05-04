@@ -1,7 +1,12 @@
 import { useParams } from "react-router";
+import Header from "../../components/Header/Header";
+import Loading from "../../components/Loading/Loading";
+import MusicDetailCard from "../../components/MusicDetailCard/MusicDetailCard";
+import OptionsMenu from "../../components/OptionsMenu/OptionsMenu";
 import { baseUrl } from "../../constants/Urls";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
 import useRequestData from "../../hooks/useRequestData";
+import { DetailsContainer } from "./styled";
 
 const MusicDetailsPage = () => {
   useProtectedPage();
@@ -17,9 +22,13 @@ const MusicDetailsPage = () => {
     undefined
   );
   return (
-    <div>
-      <p>Oi</p>
-    </div>
+    <>
+      <Header />
+      <DetailsContainer>
+        <OptionsMenu />
+        {data ? <MusicDetailCard music={data} genres={data.genres} /> : <Loading />}
+      </DetailsContainer>
+    </>
   );
 };
 

@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const CardContainer = styled.div`
   background-color: var(--black-50);
   width: 100%;
+  cursor: pointer;
 `;
 
 export const MusicCardContainer = styled.div`
@@ -17,6 +18,10 @@ export const MusicCardContainer = styled.div`
 
 export const MusicTitle = styled.p`
   color: var(--white);
+  cursor: pointer;
+  &:hover {
+    color: green;
+  }
 `;
 
 export const MusicPlaylist = styled.p`
