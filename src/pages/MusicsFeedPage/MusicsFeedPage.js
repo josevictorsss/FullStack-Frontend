@@ -8,6 +8,7 @@ import { baseUrl } from "../../constants/Urls";
 import Subtitles from "../../components/Subtitles/Subtitles";
 
 const MusicsFeedPage = () => {
+  document.title = "Feed";
   useProtectedPage();
   const config = {
     headers: {

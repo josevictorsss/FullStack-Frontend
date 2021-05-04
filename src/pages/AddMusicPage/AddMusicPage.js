@@ -5,6 +5,7 @@ import { AddMusicContainer } from "./styled";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
 
 const AddMusicPage = () => {
+  document.title = "+Music";
   useProtectedPage();
   return (
     <>

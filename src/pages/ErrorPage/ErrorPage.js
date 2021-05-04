@@ -4,6 +4,7 @@ import Header from "../../components/Header/Header";
 import { Container, LogoImg } from "./styled";
 
 const ErrorPage = () => {
+  document.title = "Error";
   return (
     <>
       <Header />

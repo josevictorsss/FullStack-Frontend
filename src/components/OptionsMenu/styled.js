@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const MainContainer = styled.div`
   background-color: var(--black-100);
-  width: 15vw;
-  height: 85vh;
+  min-width: 12vw;
+  height: 100vh;
+  padding: 16px;
 `;
 
 export const OptionsContainer = styled.div`
