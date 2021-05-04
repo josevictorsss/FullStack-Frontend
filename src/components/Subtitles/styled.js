@@ -4,7 +4,7 @@ export const SubtitleContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   height: 56px;
-  width: 87vw;
+  width: 88vw;
   grid-gap: 50px;
   padding: 0px 16px;
   background-color: var(--black-50);

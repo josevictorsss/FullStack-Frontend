@@ -10,5 +10,9 @@ export const MusicsContainer = styled.div`
 `;
 
 export const ErrorMessage = styled.h1`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 250px;
   color: var(--white);
 `;

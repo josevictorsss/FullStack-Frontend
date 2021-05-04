@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const MainContainer = styled.div`
   background-color: var(--black-100);
   min-width: 12vw;
-  height: 100vh;
+  height: 95vh;
   padding: 16px;
 `;
 
