@@ -1,22 +1,18 @@
 import React, { useState } from "react";
-import {
-  Box,
-  CircularProgress,
-  Container,
-  CssBaseline,
-} from "@material-ui/core";
+import { Box, Container, CssBaseline } from "@material-ui/core";
 import Header from "../../components/Header/Header";
 import LoginForm from "../../components/LoginForm/LoginForm";
+import Loading from "../../components/Loading/Loading";
 import { MainContainer } from "./styled";
 
 const LoginPage = () => {
-  const [loading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   return (
     <MainContainer>
       <Header />
       {loading ? (
-        <CircularProgress />
+        <Loading setLoading={setLoading} />
       ) : (
         <Container component="main" maxWidth="xs">
           <CssBaseline />
