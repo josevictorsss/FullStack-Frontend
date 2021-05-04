@@ -6,6 +6,7 @@ import { FeedContainer, MusicsContainer } from "./styled";
 import useRequestData from "../../hooks/useRequestData";
 import { baseUrl } from "../../constants/Urls";
 import Subtitles from "../../components/Subtitles/Subtitles";
+import Loading from "../../components/Loading/Loading";
 
 const MusicsFeedPage = () => {
   document.title = "Feed";
@@ -29,7 +30,7 @@ const MusicsFeedPage = () => {
               return <MusicCard key={music.id} music={music} />;
             })
           ) : (
-            <p>Sei lá</p>
+            <Loading />
           )}
         </MusicsContainer>
       </FeedContainer>
