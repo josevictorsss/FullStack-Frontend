@@ -1,16 +1,14 @@
+import React, { useState } from "react";
 import Header from "../../components/Header/Header";
 import MusicCard from "../../components/MusicCard/MusicCard";
 import OptionsMenu from "../../components/OptionsMenu/OptionsMenu";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
-import {
-  ErrorMessage,
-  FeedContainer,
-  MusicsContainer,
-} from "./styled";
+import { ErrorMessage, FeedContainer, MusicsContainer } from "./styled";
 import useRequestData from "../../hooks/useRequestData";
 import { baseUrl } from "../../constants/Urls";
 import Subtitles from "../../components/Subtitles/Subtitles";
 import Loading from "../../components/Loading/Loading";
+import Popup from "../../components/Popup/Popup";
 
 const MusicsFeedPage = () => {
   document.title = "Feed";
@@ -21,6 +19,11 @@ const MusicsFeedPage = () => {
     },
   };
   const { data } = useRequestData(`${baseUrl}/music/all`, config, undefined);
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal((prev) => !prev);
+  };
 
   return (
     <>
@@ -34,7 +37,21 @@ const MusicsFeedPage = () => {
           )}
           {data ? (
             data.map((music) => {
-              return <MusicCard key={music.id} music={music} />;
+              return (
+                <>
+                  <MusicCard
+                    key={music.id}
+                    music={music}
+                    handleModal={openModal}
+                  />
+                  <Popup
+                    showModal={showModal}
+                    setShowModal={setShowModal}
+                    music={music}
+                    genres={music.genres}
+                  />
+                </>
+              );
             })
           ) : (
             <Loading />
