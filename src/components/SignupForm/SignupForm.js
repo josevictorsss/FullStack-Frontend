@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import {
-  Avatar,
-  Button,
-  Grid,
-  Link,
-  TextField,
-  CircularProgress,
-  Typography,
-} from "@material-ui/core";
+import { Avatar, Grid, Link, CircularProgress } from "@material-ui/core";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-import { useStyles } from "./styled";
+import {
+  StyledButton,
+  useStyles,
+  StyledTextField,
+  TitleSignup,
+  FormContainer,
+} from "./styled";
 import useForm from "../../hooks/useForm";
 import { goToLogin } from "../../routes/Coordinator";
 import { signUp } from "../../services/User";
@@ -37,16 +35,20 @@ const SignupForm = () => {
       <Avatar className={classes.avatar}>
         <LockOutlinedIcon />
       </Avatar>
-      <Typography component="h1" variant="h5">
+      <TitleSignup component="h1" variant="h5">
         Cadastre-se
-      </Typography>
-      <form className={classes.form} noValidate onSubmit={handleSignup}>
+      </TitleSignup>
+      <FormContainer
+        className={classes.form}
+        noValidate
+        onSubmit={handleSignup}
+      >
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <TextField
+            <StyledTextField
               autoComplete="name"
               name="name"
-              variant="outlined"
+              variant="filled"
               required
               fullWidth
               id="name"
@@ -57,8 +59,8 @@ const SignupForm = () => {
             />
           </Grid>
           <Grid item xs={12}>
-            <TextField
-              variant="outlined"
+            <StyledTextField
+              variant="filled"
               required
               fullWidth
               id="email"
@@ -70,8 +72,8 @@ const SignupForm = () => {
             />
           </Grid>
           <Grid item xs={12}>
-            <TextField
-              variant="outlined"
+            <StyledTextField
+              variant="filled"
               required
               fullWidth
               id="nickname"
@@ -83,8 +85,8 @@ const SignupForm = () => {
             />
           </Grid>
           <Grid item xs={12}>
-            <TextField
-              variant="outlined"
+            <StyledTextField
+              variant="filled"
               required
               fullWidth
               name="password"
@@ -97,7 +99,7 @@ const SignupForm = () => {
             />
           </Grid>
         </Grid>
-        <Button
+        <StyledButton
           type="submit"
           fullWidth
           variant="contained"
@@ -105,7 +107,7 @@ const SignupForm = () => {
           className={classes.submit}
         >
           {loading ? <CircularProgress /> : <>CADASTRAR</>}
-        </Button>
+        </StyledButton>
         <Grid container justify="flex-end">
           <Grid item>
             <Link href="#" variant="body2" onClick={() => goToLogin(history)}>
@@ -113,7 +115,7 @@ const SignupForm = () => {
             </Link>
           </Grid>
         </Grid>
-      </form>
+      </FormContainer>
     </div>
   );
 };
