@@ -3,7 +3,7 @@ import { useState } from "react";
 import useForm from "../../hooks/useForm";
 import { goToSignup } from "../../routes/Coordinator";
 import { login } from "../../services/User";
-import { Avatar, Grid, Link } from "@material-ui/core";
+import { Avatar, CircularProgress, Grid, Link } from "@material-ui/core";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import {
   useStyles,
@@ -71,7 +71,7 @@ const LoginForm = () => {
           color="primary"
           className={classes.submit}
         >
-          <>ENTRAR</>
+          {loading ? <CircularProgress color="secondary" /> : <>CADASTRAR</>}
         </StyledButton>
         <Grid container>
           <Grid item>

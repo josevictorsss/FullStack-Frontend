@@ -11,7 +11,6 @@ import {
 
 const Popup = (props) => {
   const { showModal, setShowModal, music, genres } = props;
-  console.log(genres.type);
   const modalRef = useRef();
   const animation = useSpring({
     config: {
