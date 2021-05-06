@@ -24,7 +24,7 @@ const Header = () => {
     <div>
       <HeaderContainer>
         {!token && (
-          <NavBar position="static">
+          <NavBar position="sticky">
             <ToolConfigBar>
               <h1>Labefy</h1>
               <UserOptions>
@@ -35,7 +35,7 @@ const Header = () => {
           </NavBar>
         )}
         {token && (
-          <NavBar position="static">
+          <NavBar position="sticky">
             <ToolConfigBar>
               <Title onClick={() => goToMusics(history)}>Labefy</Title>
               <UserOptions>
