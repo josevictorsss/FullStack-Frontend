@@ -20,7 +20,8 @@ export const ModalWrapper = styled.div`
   position: relative;
   z-index: 10;
   border-radius: 10px;
-  margin-right: 500px;
+  margin-right: 400px;
+  margin-bottom: 500px;
 `;
 
 export const ModalContent = styled.div`
@@ -54,6 +55,7 @@ export const ModalContent = styled.div`
     color: #fff;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
   }
 `;
 
