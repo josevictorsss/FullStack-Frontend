@@ -21,7 +21,7 @@ const MusicsFeedPage = () => {
   const { data } = useRequestData(`${baseUrl}/music/all`, config, undefined);
   const [showModal, setShowModal] = useState(false);
 
-  const openModal = () => {
+  const openMusicModal = () => {
     setShowModal((prev) => !prev);
   };
 
@@ -42,7 +42,7 @@ const MusicsFeedPage = () => {
                   <MusicCard
                     key={music.id}
                     music={music}
-                    handleModal={openModal}
+                    handleModal={openMusicModal}
                   />
                   <MusicModal
                     showModal={showModal}
