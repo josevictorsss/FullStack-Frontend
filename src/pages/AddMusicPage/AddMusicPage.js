@@ -1,7 +1,7 @@
 import AddMusicForm from "../../components/AddMusicForm/AddMusicForm";
 import OptionsMenu from "../../components/OptionsMenu/OptionsMenu";
 import Header from "../../components/Header/Header";
-import { AddMusicContainer } from "./styled";
+import { AddContainer, AddMusicContainer } from "./styled";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
 
 const AddMusicPage = () => {
@@ -10,10 +10,12 @@ const AddMusicPage = () => {
   return (
     <>
       <Header />
-      <AddMusicContainer>
+      <AddContainer>
         <OptionsMenu />
-        <AddMusicForm />
-      </AddMusicContainer>
+        <AddMusicContainer>
+          <AddMusicForm />
+        </AddMusicContainer>
+      </AddContainer>
     </>
   );
 };
