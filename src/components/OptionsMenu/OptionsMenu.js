@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { MainContainer, Options, OptionsContainer, Option } from "./styled";
 import { Home, PlaylistAdd, Queue, Storage } from "@material-ui/icons";
-import { goToAddMusic, goToMusics } from "../../routes/Coordinator";
+import {
+  goToAddMusic,
+  goToMusics,
+  goToPlaylists,
+} from "../../routes/Coordinator";
 import { useHistory } from "react-router";
 import PlaylistModal from "../PlaylistModal/PlaylistModal";
 
@@ -20,7 +24,7 @@ const OptionsMenu = () => {
           <Home />
           <Option>Ínicio / Músicas</Option>
         </Options>
-        <Options>
+        <Options onClick={() => goToPlaylists(history)}>
           <Storage />
           <Option>Suas playlists</Option>
         </Options>
@@ -32,7 +36,7 @@ const OptionsMenu = () => {
           <Queue />
           <Option>Adicionar música</Option>
         </Options>
-      <PlaylistModal showModal={showModal} setShowModal={setShowModal} />
+        <PlaylistModal showModal={showModal} setShowModal={setShowModal} />
       </OptionsContainer>
     </MainContainer>
   );

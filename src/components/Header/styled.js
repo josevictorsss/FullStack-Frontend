@@ -102,4 +102,7 @@ export const Nickname = styled.div`
 
 export const Title = styled.h1`
   cursor: pointer;
+  &:hover {
+    color: green;
+  }
 `;

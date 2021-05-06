@@ -17,3 +17,7 @@ export const goToAddMusic = (history) => {
 export const goToDetails = (history, id) => {
   history.push(`/music/${id}`);
 };
+
+export const goToPlaylists = (history) => {
+  history.push("/playlists")
+}
