@@ -15,7 +15,7 @@ const useRequestData = (url, headers, initialState) => {
 
   useEffect(() => {
     getData();
-  });
+  },[]);
 
   return { data, getData };
 };
