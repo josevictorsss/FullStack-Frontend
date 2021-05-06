@@ -15,11 +15,10 @@ const OptionsMenu = () => {
 
   return (
     <MainContainer>
-      <PlaylistModal showModal={showModal} setShowModal={setShowModal} />
       <OptionsContainer>
         <Options onClick={() => goToMusics(history)}>
           <Home />
-          <Option>Ínicio</Option>
+          <Option>Ínicio / Músicas</Option>
         </Options>
         <Options>
           <Storage />
@@ -33,6 +32,7 @@ const OptionsMenu = () => {
           <Queue />
           <Option>Adicionar música</Option>
         </Options>
+      <PlaylistModal showModal={showModal} setShowModal={setShowModal} />
       </OptionsContainer>
     </MainContainer>
   );
