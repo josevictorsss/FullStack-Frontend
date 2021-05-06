@@ -8,7 +8,7 @@ import useRequestData from "../../hooks/useRequestData";
 import { baseUrl } from "../../constants/Urls";
 import Subtitles from "../../components/Subtitles/Subtitles";
 import Loading from "../../components/Loading/Loading";
-import Popup from "../../components/Popup/Popup";
+import MusicModal from "../../components/MusicModal/MusicModal";
 
 const MusicsFeedPage = () => {
   document.title = "Feed";
@@ -29,7 +29,7 @@ const MusicsFeedPage = () => {
     <>
       <Header />
       <FeedContainer>
-        <OptionsMenu />
+        <OptionsMenu/>
         <MusicsContainer>
           <Subtitles />
           {data && data.length === 0 && (
@@ -44,7 +44,7 @@ const MusicsFeedPage = () => {
                     music={music}
                     handleModal={openModal}
                   />
-                  <Popup
+                  <MusicModal
                     showModal={showModal}
                     setShowModal={setShowModal}
                     music={music}

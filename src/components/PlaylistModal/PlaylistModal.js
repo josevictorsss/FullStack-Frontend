@@ -1,16 +1,15 @@
 import React, { useCallback, useEffect, useRef } from "react";
-import { useSpring, animated } from "react-spring";
+import { useSpring } from "@react-spring/core";
+import { animated } from "@react-spring/web";
 import {
   Background,
   CloseModalButton,
-  InnerSubtitles,
   ModalContent,
   ModalWrapper,
-  Point,
 } from "./styled";
 
-const Popup = (props) => {
-  const { showModal, setShowModal, music, genres } = props;
+const PlaylistModal = (props) => {
+  const { showModal, setShowModal } = props;
   const modalRef = useRef();
   const animation = useSpring({
     config: {
@@ -21,7 +20,7 @@ const Popup = (props) => {
   });
 
   const closeModal = (e) => {
-    if (modalRef.current === e.target) {
+    if ((modalRef.current = e.target)) {
       setShowModal(false);
     }
   };
@@ -47,17 +46,7 @@ const Popup = (props) => {
         <Background onClick={closeModal} ref={modalRef}>
           <animated.div style={animation}>
             <ModalWrapper showModal={showModal}>
-              <ModalContent>
-                <h1>{music.title}</h1>
-                <InnerSubtitles>
-                  <p>{music.author}</p>
-                  <Point>•</Point>
-                  {genres.map((genre) => {
-                    return <span>{genre}</span>;
-                  })}
-                </InnerSubtitles>
-                <button>Excluir</button>
-              </ModalContent>
+              <ModalContent></ModalContent>
               <CloseModalButton
                 aria-label="Close modal"
                 onClick={() => setShowModal((prev) => !prev)}
@@ -70,4 +59,4 @@ const Popup = (props) => {
   );
 };
 
-export default Popup;
+export default PlaylistModal;

@@ -1,13 +1,21 @@
+import React, { useState } from "react";
 import { MainContainer, Options, OptionsContainer, Option } from "./styled";
 import { Home, PlaylistAdd, Queue, Storage } from "@material-ui/icons";
 import { goToAddMusic, goToMusics } from "../../routes/Coordinator";
 import { useHistory } from "react-router";
+import PlaylistModal from "../PlaylistModal/PlaylistModal";
 
 const OptionsMenu = () => {
   const history = useHistory();
+  const [showModal, setShowModal] = useState(false);
+
+  const openPlaylistModal = () => {
+    setShowModal((prev) => !prev);
+  };
 
   return (
     <MainContainer>
+      <PlaylistModal showModal={showModal} setShowModal={setShowModal} />
       <OptionsContainer>
         <Options onClick={() => goToMusics(history)}>
           <Home />
@@ -19,7 +27,7 @@ const OptionsMenu = () => {
         </Options>
         <Options>
           <PlaylistAdd />
-          <Option>Criar playlists</Option>
+          <Option onClick={openPlaylistModal}>Criar playlists</Option>
         </Options>
         <Options onClick={() => goToAddMusic(history)}>
           <Queue />
