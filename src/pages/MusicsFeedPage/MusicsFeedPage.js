@@ -29,7 +29,7 @@ const MusicsFeedPage = () => {
     <>
       <Header />
       <FeedContainer>
-        <OptionsMenu/>
+        <OptionsMenu />
         <MusicsContainer>
           <Subtitles />
           {data && data.length === 0 && (
