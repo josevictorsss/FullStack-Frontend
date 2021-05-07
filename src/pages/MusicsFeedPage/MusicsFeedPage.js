@@ -31,7 +31,6 @@ const MusicsFeedPage = () => {
           )}
           {data ? (
             data.map((music) => {
-              console.log(music);
               return (
                 <>
                   <MusicCard key={music.id} music={music} />

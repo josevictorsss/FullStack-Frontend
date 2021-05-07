@@ -4,6 +4,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import MusicDetailsPage from "../pages/MusicDetailsPage/MusicDetailsPage";
 import MusicsFeedPage from "../pages/MusicsFeedPage/MusicsFeedPage";
+import PlaylistDetailsPage from "../pages/PlaylistDetailsPage/PlaylistDetailsPage";
 import PlaylistsPage from "../pages/PlaylistsPage/PlaylistsPage";
 import SignupPage from "../pages/SignupPage/SignupPage";
 
@@ -28,6 +29,9 @@ const Router = () => {
         </Route>
         <Route exact path="/playlists">
           <PlaylistsPage />
+        </Route>
+        <Route exact path="/playlist/:id">
+          <PlaylistDetailsPage />
         </Route>
         <Route>
           <ErrorPage />
