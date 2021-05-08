@@ -8,6 +8,9 @@ export const PlaylistSubtitleContainer = styled.div`
   grid-gap: 50px;
   padding: 0px 16px;
   background-color: var(--black-50);
+  @media screen and (min-device-width: 320px) and (max-device-width: 420px) {
+    width: 100%;
+  }
 `;
 
 export const PlaylistSubtitle = styled.p`

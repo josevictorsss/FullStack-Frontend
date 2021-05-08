@@ -5,11 +5,17 @@ export const MainContainer = styled.div`
   min-width: 12vw;
   height: 95vh;
   padding: 16px;
+  @media screen and (min-device-width: 320px) and (max-device-width: 420px) {
+    height: 20vh;
+  }
 `;
 
 export const OptionsContainer = styled.div`
   display: flex;
   flex-direction: column;
+  @media screen and (min-device-width: 320px) and (max-device-width: 420px) {
+    flex-direction:row;
+  }
 `;
 
 export const Options = styled.div`
