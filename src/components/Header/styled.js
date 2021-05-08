@@ -1,30 +1,20 @@
 import styled from "styled-components";
-import AppBar from "@material-ui/core/AppBar";
-import { Toolbar } from "@material-ui/core";
 
 export const HeaderContainer = styled.div`
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   height: 5vh;
   border-bottom: 1px solid #edeff1;
   background-color: #1a0c09;
+  padding: 0 16px;
+  position: sticky;
   @media screen and (min-device-width: 320px) and (max-device-width: 420px) {
-    height: 30vh;
+    height: 20vh;
   }
   @media screen and (min-device-width: 421px) and (max-device-width: 800px) {
     height: 20vh;
-  }
-`;
-
-export const Logo = styled.img`
-  height: 70px;
-  margin-top: 10px;
-  cursor: pointer;
-  @media screen and (min-device-width: 320px) and (max-device-width: 420px) {
-    height: 8vh;
-  }
-  @media screen and (min-device-width: 421px) and (max-device-width: 800px) {
-    height: 8vh;
   }
 `;
 
@@ -40,6 +30,9 @@ export const Button = styled.button`
   margin-right: 20px;
   text-align: center;
   cursor: pointer;
+  &:hover {
+    color: green;
+  }
   @media screen and (min-device-width: 320px) and (max-device-width: 420px) {
     margin-top: 5px;
   }
@@ -48,37 +41,12 @@ export const Button = styled.button`
   }
 `;
 
-export const NavBar = styled(AppBar)`
-  display: flex;
-  justify-content: space-evenly;
-  background-color: #1a0c09;
-  @media screen and (min-device-width: 320px) and (max-device-width: 420px) {
-    flex-direction: column;
-  }
-  @media screen and (min-device-width: 421px) and (max-device-width: 800px) {
-    flex-direction: column;
-  }
-`;
-
-export const ToolConfigBar = styled(Toolbar)`
-  display: flex;
-  justify-content: space-between;
-  padding-left: 0px;
-  background-color: #1a0c09;
-  @media screen and (min-device-width: 320px) and (max-device-width: 420px) {
-    flex-direction: column;
-  }
-  @media screen and (min-device-width: 421px) and (max-device-width: 800px) {
-    flex-direction: column;
-  }
-`;
-
 export const UserOptions = styled.div`
   display: flex;
-  color: black;
-  padding: 10px 5px 0 20px;
+  padding: 0 16px;
   justify-content: center;
   align-items: center;
+  flex: end;
   @media screen and (min-device-width: 320px) and (max-device-width: 420px) {
     flex-direction: column;
     padding: 4px;
@@ -102,6 +70,7 @@ export const Nickname = styled.div`
 
 export const Title = styled.h1`
   cursor: pointer;
+  color: var(--white);
   &:hover {
     color: green;
   }

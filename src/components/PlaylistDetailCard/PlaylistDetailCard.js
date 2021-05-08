@@ -9,6 +9,7 @@ import {
 
 const PlaylistDetailCard = (props) => {
   const { music } = props;
+  document.title = `Playlist`;
   const dataInput = music.createdAt;
   const newDate = new Date(dataInput);
   const formatedDate = newDate.toLocaleDateString("pt-BR", { timeZone: "UTC" });
