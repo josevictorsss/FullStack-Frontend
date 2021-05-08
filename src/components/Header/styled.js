@@ -13,9 +13,6 @@ export const HeaderContainer = styled.div`
   @media screen and (min-device-width: 320px) and (max-device-width: 420px) {
     height: 20vh;
   }
-  @media screen and (min-device-width: 421px) and (max-device-width: 800px) {
-    height: 20vh;
-  }
 `;
 
 export const Button = styled.button`
@@ -36,9 +33,6 @@ export const Button = styled.button`
   @media screen and (min-device-width: 320px) and (max-device-width: 420px) {
     margin-top: 5px;
   }
-  @media screen and (min-device-width: 421px) and (max-device-width: 800px) {
-    margin-top: 10px;
-  }
 `;
 
 export const UserOptions = styled.div`
@@ -51,9 +45,6 @@ export const UserOptions = styled.div`
     flex-direction: column;
     padding: 4px;
   }
-  @media screen and (min-device-width: 421px) and (max-device-width: 800px) {
-    flex-direction: column;
-  }
 `;
 
 export const Nickname = styled.div`
@@ -61,9 +52,6 @@ export const Nickname = styled.div`
   color: white;
   font-size: 16px;
   @media screen and (min-device-width: 320px) and (max-device-width: 420px) {
-    padding-right: 0;
-  }
-  @media screen and (min-device-width: 421px) and (max-device-width: 800px) {
     padding-right: 0;
   }
 `;
