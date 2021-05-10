@@ -8,6 +8,7 @@ import PlaylistDetailsSubtitles from "../../components/PlaylistDetailsSubtitles/
 import { baseUrl } from "../../constants/Urls";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
 import useRequestData from "../../hooks/useRequestData";
+import { ErrorMessage } from "../PlaylistsPage/styled";
 import { PlaylistDetailsContainer, PlaylistDetailsFeed } from "./styled";
 
 const PlaylistDetailsPage = () => {
@@ -30,6 +31,11 @@ const PlaylistDetailsPage = () => {
         <OptionsMenu />
         <PlaylistDetailsFeed>
           <PlaylistDetailsSubtitles />
+          {data && data.length === 0 && (
+            <ErrorMessage>
+              Você ainda não tem nenhuma música nessa playlist.
+            </ErrorMessage>
+          )}
           {data ? (
             data.map((music) => {
               return <PlaylistDetailCard music={music} />;
