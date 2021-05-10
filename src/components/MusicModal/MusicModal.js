@@ -4,6 +4,7 @@ import {
   Background,
   CloseModalButton,
   InnerSubtitles,
+  ModalButtons,
   ModalContent,
   ModalWrapper,
   Point,
@@ -56,7 +57,10 @@ const MusicModal = (props) => {
                     return <span>{genre}</span>;
                   })}
                 </InnerSubtitles>
-                <button>Excluir</button>
+                <ModalButtons>
+                  <button>Excluir</button>
+                  <button>Adicionar a playlist</button>
+                </ModalButtons>
               </ModalContent>
               <CloseModalButton
                 aria-label="Close modal"

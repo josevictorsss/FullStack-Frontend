@@ -79,3 +79,16 @@ export const Point = styled.p`
   margin: 0 4px;
   color: var(--black-50);
 `;
+
+export const ModalButtons = styled.div`
+  display: flex;
+  button {
+    padding: 10px 24px;
+    margin: 20px 4px;
+    background: #141414;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+`;
