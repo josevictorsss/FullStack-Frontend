@@ -1,5 +1,6 @@
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useSpring, animated } from "react-spring";
+import AddMusicToPlaylistModal from "../AddMusicToPlaylistModal/AddMusicToPlaylistModal";
 import {
   Background,
   CloseModalButton,
@@ -12,6 +13,7 @@ import {
 
 const MusicModal = (props) => {
   const { showModal, setShowModal, music, genres } = props;
+  const [showAddMusicModal, setShowAddMusicModal] = useState(false);
   const modalRef = useRef();
   const animation = useSpring({
     config: {
@@ -21,10 +23,19 @@ const MusicModal = (props) => {
     transform: showModal ? `translateY(0%)` : `translateY(-100%)`,
   });
 
+  const openMusicModal = () => {
+    setShowAddMusicModal((prev) => !prev);
+  };
+
   const closeModal = (e) => {
     if (modalRef.current === e.target) {
       setShowModal(false);
     }
+  };
+
+  const handleAddMusicModal = () => {
+    openMusicModal();
+    setShowModal(false);
   };
 
   const keyPress = useCallback(
@@ -59,7 +70,9 @@ const MusicModal = (props) => {
                 </InnerSubtitles>
                 <ModalButtons>
                   <button>Excluir</button>
-                  <button>Adicionar a playlist</button>
+                  <button onClick={handleAddMusicModal}>
+                    Adicionar a playlist
+                  </button>
                 </ModalButtons>
               </ModalContent>
               <CloseModalButton
@@ -70,6 +83,11 @@ const MusicModal = (props) => {
           </animated.div>
         </Background>
       ) : null}
+      <AddMusicToPlaylistModal
+        showModal={showAddMusicModal}
+        setShowModal={setShowAddMusicModal}
+        music={music}
+      />
     </>
   );
 };

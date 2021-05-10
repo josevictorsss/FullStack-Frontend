@@ -21,12 +21,12 @@ const MusicCard = (props) => {
         <MusicTitle onClick={handleModal}>{music.title}</MusicTitle>
         <MusicPlaylist>{music.album}</MusicPlaylist>
         <CreatedAt>{music.createdAt}</CreatedAt>
-      <MusicModal
-        showModal={showModal}
-        setShowModal={setShowModal}
-        music={music}
-        genres={music.genres}
-      />
+        <MusicModal
+          showModal={showModal}
+          setShowModal={setShowModal}
+          music={music}
+          genres={music.genres}
+        />
       </MusicCardContainer>
     </CardContainer>
   );

@@ -26,7 +26,7 @@ export const createPlaylist = (body) => {
     });
 };
 
-export const addTrackToPlaylist = (body, update) => {
+export const addTrackToPlaylist = (body, getData) => {
   axios
     .put(`${baseUrl}/playlist/music`, body, {
       headers: {
@@ -34,13 +34,15 @@ export const addTrackToPlaylist = (body, update) => {
       },
     })
     .then((response) => {
+      console.log(response);
       Swal.fire({
         title: "Música adicionada a playlist",
         icon: "success",
       });
-      update();
+      getData();
     })
     .catch((error) => {
+      console.log(error);
       Swal.fire({
         title: "Erro ao adicionar a música a playlist.",
         icon: "error",
