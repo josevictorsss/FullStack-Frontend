@@ -1,31 +1,30 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
 import useForm from "../../hooks/useForm";
-import { goToSignup, goToUpdatePassword } from "../../routes/Coordinator";
-import { login } from "../../services/User";
+import { resetPassword } from "../../services/User";
 import { Avatar, CircularProgress, Grid, Link } from "@material-ui/core";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import {
   useStyles,
   Container,
+  TitleLogin,
   FormContainer,
   StyledTextField,
   StyledButton,
-  TitleLogin,
 } from "./styled";
+import { goToLogin } from "../../routes/Coordinator";
 
-const LoginForm = () => {
+const UpdatePassForm = () => {
   const history = useHistory();
+  const [loading, setLoading] = useState(false);
   const { form, changeState, clearInput } = useForm({
     email: "",
-    password: "",
   });
-  const [loading, setLoading] = useState(false);
   const classes = useStyles();
 
-  const handleLogin = (event) => {
+  const handleUpdatePassword = (event) => {
     event.preventDefault();
-    login(form, history, setLoading);
+    resetPassword(form, history, setLoading);
     clearInput();
   };
 
@@ -35,9 +34,9 @@ const LoginForm = () => {
         <LockOutlinedIcon />
       </Avatar>
       <TitleLogin component="h1" variant="h5">
-        Entre com sua conta
+        Insira o email abaixo
       </TitleLogin>
-      <FormContainer onSubmit={handleLogin} noValidate>
+      <FormContainer onSubmit={handleUpdatePassword} noValidate>
         <StyledTextField
           variant="filled"
           margin="normal"
@@ -51,19 +50,6 @@ const LoginForm = () => {
           value={form.email}
           onChange={changeState}
         />
-        <StyledTextField
-          variant="filled"
-          margin="normal"
-          required
-          fullWidth
-          name="password"
-          label="Senha"
-          type="password"
-          id="password"
-          autoComplete="current-password"
-          value={form.password}
-          onChange={changeState}
-        />
         <StyledButton
           type="submit"
           fullWidth
@@ -71,21 +57,12 @@ const LoginForm = () => {
           color="primary"
           className={classes.submit}
         >
-          {loading ? <CircularProgress color="secondary" /> : <>CADASTRAR</>}
+          {loading ? <CircularProgress color="secondary" /> : <>ENVIAR</>}
         </StyledButton>
-        <Grid container>
+        <Grid container justify="flex-end">
           <Grid item>
-            <Link href="#" variant="body2" onClick={() => goToSignup(history)}>
-              {"Não tem uma conta? Cadastre-se."}
-            </Link>
-          </Grid>
-          <Grid item>
-            <Link
-              href="#"
-              variant="body2"
-              onClick={() => goToUpdatePassword(history)}
-            >
-              {"Esqueceu a senha? Clique aqui."}
+            <Link href="#" variant="body2" onClick={() => goToLogin(history)}>
+              Já tem uma conta? Entre aqui.
             </Link>
           </Grid>
         </Grid>
@@ -94,4 +71,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default UpdatePassForm;

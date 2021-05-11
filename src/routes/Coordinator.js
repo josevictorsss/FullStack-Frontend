@@ -21,3 +21,7 @@ export const goToPlaylists = (history) => {
 export const goToPlaylistDetails = (history, id) => {
   history.push(`/playlist/${id}`);
 };
+
+export const goToUpdatePassword = (history) => {
+  history.push(`/update-password`);
+};

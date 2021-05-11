@@ -6,6 +6,7 @@ import MusicsFeedPage from "../pages/MusicsFeedPage/MusicsFeedPage";
 import PlaylistDetailsPage from "../pages/PlaylistDetailsPage/PlaylistDetailsPage";
 import PlaylistsPage from "../pages/PlaylistsPage/PlaylistsPage";
 import SignupPage from "../pages/SignupPage/SignupPage";
+import UpdatePasswordPage from "../pages/UpdatePasswordPage/UpdatePasswordPage";
 
 const Router = () => {
   return (
@@ -28,6 +29,9 @@ const Router = () => {
         </Route>
         <Route exact path="/playlist/:id">
           <PlaylistDetailsPage />
+        </Route>
+        <Route exact path="/update-password">
+          <UpdatePasswordPage />
         </Route>
         <Route>
           <ErrorPage />
