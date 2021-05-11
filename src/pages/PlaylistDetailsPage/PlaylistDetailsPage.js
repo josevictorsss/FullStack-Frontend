@@ -24,6 +24,7 @@ const PlaylistDetailsPage = () => {
     config,
     undefined
   );
+  console.log(data);
   return (
     <>
       <Header />
@@ -31,13 +32,13 @@ const PlaylistDetailsPage = () => {
         <OptionsMenu />
         <PlaylistDetailsFeed>
           <PlaylistDetailsSubtitles />
-          {data && data.length === 0 && (
+          {data.musics && data.musics.length === 0 && (
             <ErrorMessage>
               Você ainda não tem nenhuma música nessa playlist.
             </ErrorMessage>
           )}
-          {data ? (
-            data.map((music) => {
+          {data.musics ? (
+            data.musics.map((music) => {
               return <PlaylistDetailCard music={music} />;
             })
           ) : (
