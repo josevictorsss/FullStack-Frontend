@@ -9,7 +9,16 @@ import { baseUrl } from "../../constants/Urls";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
 import useRequestData from "../../hooks/useRequestData";
 import { ErrorMessage } from "../PlaylistsPage/styled";
-import { PlaylistDetailsContainer, PlaylistDetailsFeed } from "./styled";
+import {
+  InfoContainer,
+  InnerInfo,
+  LengthP,
+  Playlist,
+  PlaylistDetailsContainer,
+  PlaylistDetailsFeed,
+  Point,
+  TitlePlaylist,
+} from "./styled";
 
 const PlaylistDetailsPage = () => {
   useProtectedPage();
@@ -24,20 +33,28 @@ const PlaylistDetailsPage = () => {
     config,
     undefined
   );
-  console.log(data);
   return (
     <>
       <Header />
       <PlaylistDetailsContainer>
         <OptionsMenu />
         <PlaylistDetailsFeed>
+          <InfoContainer>
+            <Playlist>playlist</Playlist>
+            <TitlePlaylist>{data?.playlistInfo?.title}</TitlePlaylist>
+            <InnerInfo>
+              <p>{data?.playlistInfo?.subtitle}</p>
+              <Point>•</Point>
+              <LengthP>{data?.musics?.length} músicas</LengthP>
+            </InnerInfo>
+          </InfoContainer>
           <PlaylistDetailsSubtitles />
-          {data.musics && data.musics.length === 0 && (
+          {data?.musics?.length === 0 && (
             <ErrorMessage>
               Você ainda não tem nenhuma música nessa playlist.
             </ErrorMessage>
           )}
-          {data.musics ? (
+          {data ? (
             data.musics.map((music) => {
               return <PlaylistDetailCard music={music} />;
             })
