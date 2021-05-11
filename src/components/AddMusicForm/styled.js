@@ -7,6 +7,9 @@ export const Container = styled.div`
   justify-content: center;
   margin-top: 15vh;
   width: 100%;
+  @media screen and (min-device-width: 320px) and (max-device-width: 420px) {
+    margin-top: 0;
+  }
 `;
 
 export const FormContainer = styled.form`

@@ -23,6 +23,9 @@ export const ModalWrapper = styled.div`
   z-index: 10;
   border-radius: 10px;
   margin-bottom: 400px;
+  @media screen and (min-device-width: 320px) and (max-device-width: 420px) {
+    width: 300px;
+  }
 `;
 
 export const ModalContent = styled.div`

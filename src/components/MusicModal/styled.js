@@ -22,6 +22,10 @@ export const ModalWrapper = styled.div`
   border-radius: 10px;
   margin-right: 400px;
   margin-bottom: 500px;
+  @media screen and (min-device-width: 320px) and (max-device-width: 420px) {
+    width: 300px;
+    margin-right: 0px;
+  }
 `;
 
 export const ModalContent = styled.div`
