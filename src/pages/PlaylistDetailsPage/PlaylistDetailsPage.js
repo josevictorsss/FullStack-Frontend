@@ -33,6 +33,8 @@ const PlaylistDetailsPage = () => {
     config,
     undefined
   );
+  document.title = `Playlist : ${data?.playlistInfo?.title}`;
+
   return (
     <>
       <Header />
