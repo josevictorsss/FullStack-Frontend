@@ -9,6 +9,9 @@ export const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(20),
     marginLeft: theme.spacing(22),
     backgroundColor: "black",
+    "@media (min-device-width: 320px) and (max-device-width: 420px)": {
+      marginTop: theme.spacing(5),
+    },
   },
 }));
 
