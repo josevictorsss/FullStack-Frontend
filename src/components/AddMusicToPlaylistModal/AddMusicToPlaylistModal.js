@@ -17,16 +17,19 @@ import { addTrackToPlaylist } from "../../services/Playlist";
 
 const AddMusicToPlaylistModal = (props) => {
   const { showModal, setShowModal, music } = props;
+  
   const config = {
     headers: {
       authorization: localStorage.getItem("token"),
     },
   };
+
   const { data, getData } = useRequestData(
     `${baseUrl}/playlist/`,
     config,
     undefined
   );
+  
   const [options, setOptions] = useState("");
   const [playlists, setPlaylists] = useState([]);
   const [selectedPlaylist, setSelectedPlaylist] = useState(undefined);
@@ -57,7 +60,7 @@ const AddMusicToPlaylistModal = (props) => {
     setSelectedPlaylist(selectedPlaylist);
   };
 
-  const closeModal = (e) => {
+  const closeModal = () => {
     setShowModal(false);
   };
 

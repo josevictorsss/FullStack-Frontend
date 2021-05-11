@@ -1,3 +1,4 @@
+import React from "react";
 import { PlaylistSubtitle, PlaylistSubtitleContainer } from "./styled";
 
 const PlaylistSubtitles = () => {

@@ -48,12 +48,6 @@ export const CloseModalButton = styled(CloseIcon)`
   z-index: 10;
 `;
 
-export const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-`;
-
 export const FormContainer = styled.form`
   width: 100%;
   max-width: 400px;

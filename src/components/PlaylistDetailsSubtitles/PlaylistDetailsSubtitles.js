@@ -1,3 +1,4 @@
+import React from "react";
 import {
   PlaylistDetailsSubtitle,
   PlaylistDetailsSubtitleContainer,
@@ -13,4 +14,4 @@ const PlaylistDetailsSubtitles = () => {
   );
 };
 
-export default PlaylistDetailsSubtitles
+export default PlaylistDetailsSubtitles;

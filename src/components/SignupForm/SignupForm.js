@@ -15,13 +15,14 @@ import { signUp } from "../../services/User";
 
 const SignupForm = () => {
   const history = useHistory();
+  const classes = useStyles();
+
   const { form, changeState, clearInput } = useForm({
     name: "",
     email: "",
     nickname: "",
     password: "",
   });
-  const classes = useStyles();
   const [loading, setLoading] = useState(false);
 
   const handleSignup = (event) => {

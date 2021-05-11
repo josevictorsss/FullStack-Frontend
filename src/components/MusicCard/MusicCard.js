@@ -15,6 +15,7 @@ const MusicCard = (props) => {
   const handleModal = () => {
     setShowModal((prev) => !prev);
   };
+  
   return (
     <CardContainer>
       <MusicCardContainer>

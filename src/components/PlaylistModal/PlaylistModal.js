@@ -15,10 +15,12 @@ import { createPlaylist } from "../../services/Playlist";
 
 const PlaylistModal = (props) => {
   const { showModal, setShowModal } = props;
+
   const { form, changeState, clearInput } = useForm({
     title: "",
     subtitle: "",
   });
+
   const modalRef = useRef();
   const animation = useSpring({
     config: {
@@ -47,7 +49,6 @@ const PlaylistModal = (props) => {
     (e) => {
       if (e.key === "Escape" && showModal) {
         setShowModal(false);
-        console.log("I pressed");
       }
     },
     [setShowModal, showModal]

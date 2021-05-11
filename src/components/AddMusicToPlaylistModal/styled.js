@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import CloseIcon from "@material-ui/icons/Close";
-import { TextField, DialogActions, Button } from "@material-ui/core";
+import { DialogActions, Button } from "@material-ui/core";
 
 export const Background = styled.div`
   width: 100%;
@@ -49,11 +49,6 @@ export const CloseModalButton = styled(CloseIcon)`
   z-index: 10;
 `;
 
-export const DialogContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
 export const FlexForm = styled.form`
   display: flex;
   flex-direction: column;
@@ -62,15 +57,11 @@ export const FlexForm = styled.form`
   padding: 20px;
 `;
 
-export const StyledTextField = styled(TextField)`
-  width: 100%;
-`;
-
 export const StyledDialogActions = styled(DialogActions)`
   margin: 16px;
 `;
 
 export const StyledButton = styled(Button)`
-  background-color: black;
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--black);
 `;

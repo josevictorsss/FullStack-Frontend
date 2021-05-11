@@ -1,6 +1,7 @@
+import React from "react";
 import { Subtitle, SubtitleContainer } from "./styled";
 
-const Subtitles = () => {
+const MusicFeedSubtitles = () => {
   return (
     <SubtitleContainer>
       <Subtitle>TÍTULO</Subtitle>
@@ -10,4 +11,4 @@ const Subtitles = () => {
   );
 };
 
-export default Subtitles;
+export default MusicFeedSubtitles;

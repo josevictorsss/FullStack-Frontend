@@ -34,7 +34,6 @@ export const addTrackToPlaylist = (body, getData) => {
       },
     })
     .then((response) => {
-      console.log(response);
       Swal.fire({
         title: "Música adicionada a playlist",
         icon: "success",

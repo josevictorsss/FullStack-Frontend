@@ -1,3 +1,4 @@
+import React from "react";
 import AddMusicForm from "../../components/AddMusicForm/AddMusicForm";
 import OptionsMenu from "../../components/OptionsMenu/OptionsMenu";
 import Header from "../../components/Header/Header";

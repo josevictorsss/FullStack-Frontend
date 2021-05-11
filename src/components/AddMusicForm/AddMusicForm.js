@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import useForm from "../../hooks/useForm";
 import { addMusic } from "../../services/Music";
@@ -19,12 +19,14 @@ const AddMusicForm = () => {
     undefined,
     undefined
   );
+  
   const { form, changeState, clearInput } = useForm({
     title: "",
     author: "",
     file: "",
     album: "",
   });
+  
   const [genres, setGenres] = useState([]);
   const [selectedGenres, setSelectedGenres] = useState([]);
 

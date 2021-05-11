@@ -6,6 +6,7 @@ import Loading from "../../components/Loading/Loading";
 import { MainContainer } from "./styled";
 
 const LoginPage = () => {
+  document.title="Labefy - Login"
   const [loading, setLoading] = useState(false);
 
   return (
