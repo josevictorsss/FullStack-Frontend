@@ -12,9 +12,12 @@ export const StyledToggleButtonGroup = styled(ToggleButtonGroup)`
 `;
 
 export const StyledToggleButton = styled(ToggleButton)`
-  color: white;
-  background-color: black;
+  color: green;
+  background-color: white;
 `;
 export const GenreType = styled.p`
   color: black;
+  &:hover {
+    color: green;
+  }
 `;
