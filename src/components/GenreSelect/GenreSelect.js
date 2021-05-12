@@ -6,10 +6,12 @@ import {
 } from "./styled";
 
 const GenreSelect = (props) => {
+  const { genres, value, onChange } = props;
+
   return (
-    <StyledToggleButtonGroup value={props.value} onChange={props.onChange}>
-      {props.genres &&
-        props.genres.map((genre) => {
+    <StyledToggleButtonGroup value={value} onChange={onChange}>
+      {genres &&
+        genres.map((genre) => {
           return (
             <StyledToggleButton key={genre} value={genre}>
               <GenreType>{genre}</GenreType>

@@ -41,7 +41,6 @@ export const addTrackToPlaylist = (body, getData) => {
       getData();
     })
     .catch((error) => {
-      console.log(error);
       Swal.fire({
         title: "Erro ao adicionar a música a playlist.",
         icon: "error",

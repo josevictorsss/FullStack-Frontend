@@ -8,11 +8,14 @@ import {
 } from "./styled";
 
 const PlaylistDetailCard = (props) => {
-  const { music } = props;
   document.title = `Playlist`;
+
+  const { music } = props;
+
   const dataInput = music.createdAt;
   const newDate = new Date(dataInput);
   const formatedDate = newDate.toLocaleDateString("pt-BR", { timeZone: "UTC" });
+
   return (
     <PlaylistContainer>
       <PlaylistCardContainer>

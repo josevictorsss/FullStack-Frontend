@@ -15,6 +15,7 @@ const MusicModal = (props) => {
   const { showModal, setShowModal, music, genres } = props;
   const [showAddMusicModal, setShowAddMusicModal] = useState(false);
   const modalRef = useRef();
+  
   const animation = useSpring({
     config: {
       duration: 250,

@@ -12,13 +12,14 @@ import Loading from "../../components/Loading/Loading";
 const MusicsFeedPage = () => {
   document.title = "Feed";
   useProtectedPage();
+  
   const config = {
     headers: {
       authorization: localStorage.getItem("token"),
     },
   };
+
   const { data } = useRequestData(`${baseUrl}/music/all`, config, undefined);
-  console.log(data);
 
   return (
     <>

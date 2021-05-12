@@ -1,3 +1,4 @@
+import React from "react";
 import { useHistory } from "react-router";
 import { goToPlaylistDetails } from "../../routes/Coordinator";
 import {
@@ -10,10 +11,13 @@ import {
 
 const PlaylistCard = (props) => {
   const history = useHistory();
+
   const { playlist } = props;
+
   const dataInput = playlist.createdAt;
   const newDate = new Date(dataInput);
   const formatedDate = newDate.toLocaleDateString("pt-BR", { timeZone: "UTC" });
+
   return (
     <PlaylistCardContainer>
       <PlaylistCardStyled>

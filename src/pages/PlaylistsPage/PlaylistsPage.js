@@ -16,12 +16,15 @@ import PlaylistCard from "../../components/PlaylistCard/PlaylistCard";
 const PlaylistsPage = () => {
   document.title = "Playlists - Labefy";
   useProtectedPage();
+
   const config = {
     headers: {
       authorization: localStorage.getItem("token"),
     },
   };
+  
   const { data } = useRequestData(`${baseUrl}/playlist/`, config, undefined);
+
   return (
     <>
       <Header />

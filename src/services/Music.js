@@ -21,7 +21,6 @@ export const addMusic = (body, history) => {
       goToMusics(history);
     })
     .catch((error) => {
-      console.log(error);
       Swal.fire({
         title: "Erro ao adicionar a música, tente novamente.",
         icon: "error",
