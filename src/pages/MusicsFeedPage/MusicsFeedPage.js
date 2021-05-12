@@ -18,6 +18,7 @@ const MusicsFeedPage = () => {
     },
   };
   const { data } = useRequestData(`${baseUrl}/music/all`, config, undefined);
+  console.log(data);
 
   return (
     <>
@@ -30,13 +31,15 @@ const MusicsFeedPage = () => {
             <ErrorMessage>Você ainda não tem nenhuma música.</ErrorMessage>
           )}
           {data ? (
-            data.map((music) => {
-              return (
-                <>
-                  <MusicCard key={music.id} music={music} />
-                </>
-              );
-            })
+            data
+              .sort((a, b) => (a.createdAt > b.createdAt ? 1 : -1))
+              .map((music) => {
+                return (
+                  <>
+                    <MusicCard key={music.id} music={music} />
+                  </>
+                );
+              })
           ) : (
             <Loading />
           )}
