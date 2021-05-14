@@ -36,7 +36,7 @@ const AddMusicToPlaylistModal = (props) => {
 
   useEffect(() => {
     if (data) {
-      setOptions(data[0].title);
+      setOptions(data[0]?.title);
       setSelectedPlaylist(data[0]);
       setPlaylists(data);
     }
